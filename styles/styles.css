@@ -1,0 +1,72 @@
+h1 {
+    text-align: center;
+}
+
+body {
+
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+main {
+    background-color: white;
+    width: 70%;
+    margin: 0 auto 1rem auto;
+    padding: 0 1rem 2rem 1rem;
+}
+
+label {
+    margin: 0.25rem;
+}
+
+img {
+    border: solid 2rem;
+    display: block;
+    margin: auto;
+    border-color: pink;
+    border-radius: .5rem;
+}
+
+fieldset {
+    border-radius: .5rem;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+
+#order-button {
+    border: none;
+    background-color: darkgreen;
+    border-color: darkgreen;
+    padding: 0.5rem 0.75rem;
+    border-radius: .25rem;
+    text-decoration: none;
+    color:white;
+    font-size: 1rem;
+    }
+
+#order-details, #personal-information {
+    text-align: center;
+    color: rgb(40, 176, 40);
+    font-size: 1.5rem;
+    padding: 0 1rem;
+}
+
+
+input[type="text"], textarea,select, #order-button {
+    width: 100%;
+    border: 1px solid rgb(85, 81, 81);
+    border-radius: .25rem;
+    margin-bottom: 1rem;
+    padding:  .5rem 0rem;
+    
+}
+
+#cone-legend, #toppings-legend, #comment-legend {
+    padding-top: 1rem;
+}
+
+
+
+
+
+
