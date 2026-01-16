@@ -10,15 +10,14 @@
 <body>
     <main>
     <h1>Ice Cream Order Form</h1>
-    <form id="ice-cream form" action="#" method="get">
+    <form id="ice-cream-form" action="#" method="get">
     <fieldset>
         <legend id="personal-information">Personal Information</legend>
-            <label id="name" for="name" >Name:</label>
+            <label for="name">Name:</label>
             <input type="text" id="name" name="name">
 
-            <label id="email" for="email" >Email:</label>
+            <label for="email">Email:</label>
             <input type="text" id="email" name="email">
-
         
     </fieldset>
 
@@ -31,25 +30,25 @@
                 <option value="Strawberry">Strawberry</option>
             </select>
 
-    
-            <legend id="cone-legend">Choose Your Cone:</legend>
-            <label for="Waffle cone">
-            <input type="radio" id="cone" value="waffle cone" name="method">Waffle Cone</label>
-            <label for="Sugar cone">
-            <input type="radio" id="cone" value="sugar cone" name="method">Sugar Cone</label>
-            <input type="radio" id="cone" value="cup" name="method">Cup</label>
+            <div id="cone-legend">Choose Your Cone:</div>
+            <label for="waffle-cone">
+            <input type="radio" id="waffle-cone" value="waffle cone" name="method">Waffle Cone</label>
+            <label for="sugar-cone">
+            <input type="radio" id="sugar-cone" value="sugar cone" name="method">Sugar Cone</label>
+            <label for="cup">
+            <input type="radio" id="cup" value="cup" name="method">Cup</label>
             
-            <legend id="toppings-legend">Toppings:</legend>
+            <div id="toppings-legend">Toppings:</div>
             <label for="sprinkles">
-            <input type="checkbox" id="topping" value="Sprinkles" name="topping[]">Sprinkles</label>
+            <input type="checkbox" id="sprinkles" value="Sprinkles" name="topping[]">Sprinkles</label>
             <label for="nuts">
-            <input type="checkbox" id="topping" value="Nuts" name="topping[]">Nuts</label>
-            <label for="Cherry">
-            <input type="checkbox" id="topping" value="cherry" name="topping[]">Cherry</label>
-            <label for="whipped Cream">
-            <input type="checkbox" id="topping" value="Whipped Cream" name="topping[]">Whipped Cream</label>
+            <input type="checkbox" id="nuts" value="Nuts" name="topping[]">Nuts</label>
+            <label for="cherry">
+            <input type="checkbox" id="cherry" value="cherry" name="topping[]">Cherry</label>
+            <label for="whipped-cream">
+            <input type="checkbox" id="whipped-cream" value="Whipped Cream" name="topping[]">Whipped Cream</label>
 
-            <legend id="comment-legend">Additional comments:</legend>
+            <div id="comment-legend">Additional comments:</div>
             <textarea rows="5" id="comment" name="comment"></textarea>
 
     </fieldset>
@@ -61,6 +60,5 @@
 
     </form>
     </main>
-    
 </body>
 </html>

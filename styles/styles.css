@@ -2,12 +2,18 @@ h1 {
     text-align: center;
 }
 
-body {
 
+
+body {
+    background-color:rgb(221, 239, 246);
     font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
 main {
+    border: 1px solid;
+    box-shadow:3rem darkgray;
+    border-radius: .25rem;
+    border-color: rgb(224, 217, 217);
     background-color: white;
     width: 70%;
     margin: 0 auto 1rem auto;
@@ -47,8 +53,10 @@ fieldset {
 #order-details, #personal-information {
     text-align: center;
     color: rgb(40, 176, 40);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     padding: 0 1rem;
+    font-weight: bold;
+    
 }
 
 
