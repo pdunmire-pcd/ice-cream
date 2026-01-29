@@ -1,4 +1,4 @@
-alert("Hello, ice cream!");
+// alert("Hello, ice cream!");
 
 document.getElementById("ice-cream-form").onsubmit = () => {
   
@@ -17,6 +17,13 @@ document.getElementById("ice-cream-form").onsubmit = () => {
   let email = document.getElementById("email").value.trim();
   if(!email) {
       document.getElementById("err-email").style.display = "block";
+      isValid = false;
+  }
+
+  // Validate flavor
+  let flavor = document.getElementById("flavor").value;
+  if(flavor == "none") {
+      document.getElementById("err-flavor").style.display = "block";
       isValid = false;
   }
 

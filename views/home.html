@@ -33,8 +33,13 @@
 
     <fieldset>
         <legend id="order-details">Order Details</legend>
-            <label for="flavor">Choose Your Flavor:</label>
+            <label for="flavor">Choose Your Flavor:
+                <span class = "err" id = "err-flavor">
+                Please select a flavor. 
+                </span>
+            </label>
             <select name="flavor" id="flavor">
+                <option value="none">-- Select a Flavor --</option>
                 <option value="vanilla">Vanilla</option>
                 <option value="chocolate">Chocolate</option>
                 <option value="Strawberry">Strawberry</option>
