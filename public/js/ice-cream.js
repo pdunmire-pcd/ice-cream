@@ -29,9 +29,10 @@ document.getElementById("ice-cream-form").onsubmit = () => {
 
 
   // Validate cone
-  let pickup = document.getElementById("pickup");
-  let delivery = document.getElementById("delivery");
-  if (!pickup.checked && !delivery.checked) {
+  let waffle = document.getElementById("waffle-cone");
+  let sugar = document.getElementById("sugar-cone");
+  let cup = document.getElementById("cup");
+  if (!waffle.checked && !sugar.checked && !cup.checked) {
       document.getElementById("err-method").style.display = "block";
       isValid = false;
   }
