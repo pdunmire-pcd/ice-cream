@@ -1,1 +1,41 @@
 alert("Hello, ice cream!");
+
+document.getElementById("ice-cream-form").onsubmit = () => {
+  
+  clearErrors();
+
+  let isValid = true;
+
+  // Validate first name
+  let name = document.getElementById("name").value.trim();
+  if(!name) {
+      document.getElementById("err-name").style.display = "block";
+      isValid = false;
+  } 
+
+  // Validate email
+  let email = document.getElementById("email").value.trim();
+  if(!email) {
+      document.getElementById("err-email").style.display = "block";
+      isValid = false;
+  }
+
+
+  // Validate cone
+  let pickup = document.getElementById("pickup");
+  let delivery = document.getElementById("delivery");
+  if (!pickup.checked && !delivery.checked) {
+      document.getElementById("err-method").style.display = "block";
+      isValid = false;
+  }
+
+  return isValid;
+}
+
+function clearErrors() {
+    let errors = document.getElementsByClassName("err");
+    for (let i = 0; i<errors.length; i++) {
+        errors[i].style.display = "none";
+    }
+}
+

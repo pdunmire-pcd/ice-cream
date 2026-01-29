@@ -73,8 +73,7 @@ input[type="text"], textarea,select, #order-button {
     padding-top: 1rem;
 }
 
-
-
-
-
-
+.err {
+  color: darkred;
+  display: none;
+}
