@@ -22,6 +22,11 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+// Admin route
+app.get('/admin', (req, res) => {
+    res.render('admin', { orders });
+});
+
 app.post('/submit-order', (req, res) => {
 
     // Create an object to store the order data
@@ -36,8 +41,8 @@ app.post('/submit-order', (req, res) => {
     };
 
     // Add order object to orders array
-    orders.push(order);
-    res.render('confirmation', { order });
+    orders.push(orders);
+    res.render('confirmation', { orders });
 });
 
 // Start the server and listen on the specified port
