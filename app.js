@@ -9,6 +9,8 @@ const PORT = 3000;
 
 app.use(express.static('public'));
 
+const orders = [];
+
 //view engine will noe recognize ejs files and render them when requested
 app.set('view engine', 'ejs');
 
@@ -20,6 +22,25 @@ app.use(express.urlencoded({ extended: true }));
 // res: allows us to send back a response to the client 
 app.get('/', (req, res) => {
     res.render('home');
+});
+
+
+app.post('/submit-order', (req, res) => {
+    
+    // Create a JSON object to store the order data
+    const order = {
+        name: req.body.name,
+        email: req.body.email,
+        order-details: req.body.order-details,
+        toppings: req.body.topping ? req.body.topping : "none",
+        cone-legend: req.body.cone-legend,
+        flavor: req.body.flavor,
+        timestamp: new Date()
+    };
+
+    // Add order object to orders array
+    orders.push(order);
+    res.render('confirmation', { order });
 });
 
 // Start the server and listen on the specified port
