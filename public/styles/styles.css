@@ -50,6 +50,27 @@ fieldset {
     font-size: 1rem;
     }
 
+    #neworder-button {
+    border: none;
+    background-color: darkgreen;
+    border-color: darkgreen;
+    padding: 0.5rem 0.75rem;
+    border-radius: .25rem;
+    text-decoration: none;
+    color:white;
+    font-size: 1rem;
+    }
+ #print-button {
+    background-color: rgb(239, 239, 243);
+    padding: 0.5rem 0.75rem;
+    border-radius: .25rem;
+    border-color: rgb(43, 68, 158);
+    text-decoration: none;
+    color:rgb(43, 68, 158);
+    font-size: 1rem;
+    }
+
+
 #order-details, #personal-information {
     text-align: center;
     color: rgb(40, 176, 40);
