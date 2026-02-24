@@ -24,6 +24,11 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+// Admin route
+app.get('/admin', (req, res) => {
+    res.render('admin', { orders });
+});
+
 
 app.post('/submit-order', (req, res) => {
     
