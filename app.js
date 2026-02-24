@@ -22,6 +22,11 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+// Confirmation route
+app.get('/thank-you', (req, res) => {
+    res.render('confirmation');
+});
+
 // Admin route
 app.get('/admin', (req, res) => {
     res.render('admin', { orders });
