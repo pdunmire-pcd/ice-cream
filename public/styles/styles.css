@@ -82,3 +82,12 @@ h4 {
     color: green;
     text-transform: uppercase;
 }
+
+.confirmed-message {
+    color: blue;
+    text-align: center;
+}
+
+p {
+    color: darkblue;
+}
