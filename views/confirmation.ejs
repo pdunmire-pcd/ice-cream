@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="icon" href="images/ice-cream-favicon.jpg">
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <main>
+        <h1>Order Confirmed! 🍦</h1>
+        <p>Thanks, <strong><%= order.name %></strong>! A confirmation will be sent to <strong><%= order.email %></strong>.</p>
+
+        <h2>Your Order</h2>
+        <ul>
+            <li><strong>Flavor:</strong> <%= order.flavor %></li>
+            <li><strong>Cone:</strong> <%= order.cone %></li>
+            <li><strong>Toppings:</strong> <%= order.toppings %></li>
+            <% if (order.comment) { %>
+            <li><strong>Comments:</strong> <%= order.comment %></li>
+            <% } %>
+        </ul>
+
+        <a href="/">Place another order</a>
+    </main>
+</body>
+</html>
