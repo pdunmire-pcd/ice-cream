@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 app.post('/submit-order', (req, res) => {
     
     // Create a JSON object to store the order data
-    const order = {
+    const orders = {
         name: req.body.name,
         email: req.body.email,
         order-details: req.body.order-details,
@@ -39,8 +39,8 @@ app.post('/submit-order', (req, res) => {
     };
 
     // Add order object to orders array
-    orders.push(order);
-    res.render('confirmation', { order });
+    orders.push(orders);
+    res.render('confirmation', { orders });
 });
 
 // Start the server and listen on the specified port
