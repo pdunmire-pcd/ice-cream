@@ -157,10 +157,11 @@ p {
 .topping-pill {
     background-color: #4a90d9;
     color: white;
-    padding: 0.25rem 0.85rem;
+    padding: 0.25rem 0.85rem 0.25rem 0.75rem;
     border-radius: 999px;
     font-size: 0.85rem;
     margin-right: 0.35rem;
+    margin-top: 0.25rem;
     display: inline-block;
 }
 
