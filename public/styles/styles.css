@@ -77,3 +77,8 @@ input[type="text"], textarea,select, #order-button {
   color: darkred;
   display: none;
 }
+
+h4 {
+    color: green;
+    text-transform: uppercase;
+}
