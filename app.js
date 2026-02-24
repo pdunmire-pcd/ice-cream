@@ -31,9 +31,9 @@ app.post('/submit-order', (req, res) => {
     const orders = {
         name: req.body.name,
         email: req.body.email,
-        order-details: req.body.order-details,
+        orderDetails: req.body.order-details,
         toppings: req.body.topping ? req.body.topping : "none",
-        cone-legend: req.body.cone-legend,
+        coneLegend: req.body.cone-legend,
         flavor: req.body.flavor,
         timestamp: new Date()
     };
@@ -41,6 +41,7 @@ app.post('/submit-order', (req, res) => {
     // Add order object to orders array
     orders.push(orders);
     res.render('confirmation', { orders });
+
 });
 
 // Start the server and listen on the specified port
