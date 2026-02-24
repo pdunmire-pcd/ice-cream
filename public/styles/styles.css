@@ -112,3 +112,62 @@ h4 {
 p {
     color: darkblue;
 }
+
+#confirmation-main {
+    max-width: 500px;
+}
+
+.checkmark-circle {
+    width: 60px;
+    height: 60px;
+    background-color: green;
+    border-radius: 50%;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem auto 1rem auto;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border-top: 1px solid rgb(224, 217, 217);
+    margin-bottom: 1rem;
+}
+
+.info-label, .info-value {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgb(224, 217, 217);
+    color: darkblue;
+}
+
+.info-label {
+    font-weight: bold;
+    color: black;
+}
+
+.topping-pill {
+    background-color: #4a90d9;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+    margin-right: 0.25rem;
+    display: inline-block;
+}
+
+.comment-box {
+    border: 1px solid rgb(224, 217, 217);
+    border-radius: .25rem;
+    padding: 0.5rem;
+    color: darkblue;
+    min-height: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.confirmation-buttons {
+    display: flex;
+    gap: 0.5rem;
+}

@@ -8,25 +8,46 @@
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
-    <main>
+    <main id="confirmation-main">
+        <div class="checkmark-circle">✓</div>
         <h1>Thank You for Your Order!</h1>
         <p class="confirmed-message">Your ice cream order has been confirmed</p>
+
         <h4>Personal Information</h4>
-        <p>Name: <%= order.name %></p>
-        <p>Email: <%= order.email %></p>
+        <div class="info-grid">
+            <span class="info-label">Name:</span>
+            <span class="info-value"><%= order.name %></span>
+            <span class="info-label">Email:</span>
+            <span class="info-value"><%= order.email %></span>
+        </div>
 
         <h4>Order Details</h4>
-        <p>Flavor: <%= order.flavor %></p>
-        <p>Cone Type: <%= order.cone %></p>
-        <p>Toppings: <%= order.toppings %></p>
+        <div class="info-grid">
+            <span class="info-label">Flavor:</span>
+            <span class="info-value"><%= order.flavor %></span>
+            <span class="info-label">Cone Type:</span>
+            <span class="info-value"><%= order.cone %></span>
+            <span class="info-label">Toppings:</span>
+            <span class="info-value">
+                <% if (order.toppings === 'None') { %>
+                    None
+                <% } else { %>
+                    <% order.toppings.split(', ').forEach(topping => { %>
+                        <span class="topping-pill"><%= topping %></span>
+                    <% }) %>
+                <% } %>
+            </span>
+        </div>
 
         <h4>Additional Comments</h4>
-        <p><%= order.comment %></p>
+        <div class="comment-box">
+            <%= order.comment || 'No comments' %>
+        </div>
 
-        <button id="print-button">Print Order</button>
-        <button  id="neworder-button" onclick="window.location.href='/'">
-  Place another order
-</button>
+        <div class="confirmation-buttons">
+            <button id="print-button" onclick="window.print()">Print Order</button>
+            <a href="/" id="neworder-button">Place Another Order</a>
+        </div>
     </main>
 </body>
 </html>
