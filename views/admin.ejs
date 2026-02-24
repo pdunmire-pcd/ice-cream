@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <!-- Scripts-->
+    <script src="//code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="//cdn.datatables.net/2.3.7/js/dataTables.js"></script>
+  
+    <!--Styles-->
+    <link rel="stylesheet" href="//cdn.datatables.net/2.3.7/css/dataTables.dataTables.css">
+</head>
+<body>
+    <h1>Order Summary</h1>
+    <table id="order-table" class="display">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Method</th>
+                <th>Toppings</th>
+                <th>Size</th>
+                <th>Comments</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+    <% orders.forEach(order => { %> 
+        <tr></td>
+            <td><%= order.name%></td>
+            <td><%= order.email%></td>
+            <td><%= order.orderDetails%></td>
+            <td><%= order.toppings%></td>
+            <td><%= order.coneLegend%></td>
+            <td><%= order.flavor%></td>
+            <td><%= order.timestamp.toLocaleString() %></td>
+        </tr>
+        <% }) %>
+        </tbody>
+    </table>
+      <script defer>
+        let table = new DataTable('#order-table' , {
+            responsive: true
+
+        });
+    </script>
+    
+</body>
+</html>
