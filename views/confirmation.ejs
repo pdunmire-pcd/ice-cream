@@ -9,18 +9,19 @@
 </head>
 <body>
     <main>
-        <h1>Order Confirmed! 🍦</h1>
-        <p>Thanks, <strong><%= order.name %></strong>! A confirmation will be sent to <strong><%= order.email %></strong>.</p>
+        <h1>Thank You for Your Order!</h1>
+        <h2>Your ice cream order has been confirmed</h2>
+        <h4>Personal Information</h4>
+        <p>Name: <%= order.name %></p>
+        <p>Email: <%= order.email %></p>
 
-        <h2>Your Order</h2>
-        <ul>
-            <li><strong>Flavor:</strong> <%= order.flavor %></li>
-            <li><strong>Cone:</strong> <%= order.cone %></li>
-            <li><strong>Toppings:</strong> <%= order.toppings %></li>
-            <% if (order.comment) { %>
-            <li><strong>Comments:</strong> <%= order.comment %></li>
-            <% } %>
-        </ul>
+        <h4>Order Details</h4>
+        <p>Flavor: <%= order.flavor %></p>
+        <p>Cone Type: <%= order.method %></p>
+        <p>Toppings: <%= order.toppings.join(", ") %></p>
+
+        <h4>Additional Comments</h4>
+        <p><%= order.comment %></p>
 
         <a href="/">Place another order</a>
     </main>
