@@ -9,6 +9,12 @@ const PORT = 3000;
 
 app.use(express.static('public'));
 
+//view engine will noe recognize ejs files and render them when requested
+app.set('view engine', 'ejs');
+
+// Middleware to parse URL-encoded data from the request body
+app.use(express.urlencoded({ extended: true }));
+
 // Define a default "route" ('/')
 // req: contains information about the incoming request
 // res: allows us to send back a response to the client 
