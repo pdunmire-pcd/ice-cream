@@ -13,6 +13,7 @@
         <h1>Thank You for Your Order!</h1>
         <p class="confirmed-message">Your ice cream order has been confirmed</p>
 
+        <div id="confirmation-details">
         <h4>Personal Information</h4>
         <div class="info-grid">
             <span class="info-label">Name:</span>
@@ -42,6 +43,7 @@
         <h4>Additional Comments</h4>
         <div class="comment-box">
             <%= order.comment || 'No comments' %>
+        </div>
         </div>
 
         <div class="confirmation-buttons">

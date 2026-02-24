@@ -12,12 +12,13 @@ body {
 main {
     border: 1px solid;
     box-shadow:3rem darkgray;
-    border-radius: .25rem;
+    border-radius: 2rem;
     border-color: rgb(224, 217, 217);
     background-color: white;
-    width: 70%;
+    width: 90%;
+    padding: 2rem 2rem 2rem 2rem;
     margin: 0 auto 1rem auto;
-    padding: 0 1rem 2rem 1rem;
+    /* padding: 0 1rem 2rem 1rem; */
 }
 
 label {
@@ -120,7 +121,7 @@ p {
 }
 
 #confirmation-main {
-    max-width: 500px;
+    max-width: 700px;
 }
 
 .checkmark-circle {
@@ -136,11 +137,18 @@ p {
     margin: 1.5rem auto 1rem auto;
 }
 
+#confirmation-details {
+    background-color: rgb(234, 234, 234);
+    border-radius: 2rem;
+    padding: 0.25rem 1rem;
+    margin-bottom: 3rem;
+}
+
 .info-grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
     border-top: 1px solid rgb(224, 217, 217);
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 }
 
 .info-label, .info-value {
@@ -157,7 +165,8 @@ p {
 .topping-pill {
     background-color: #4a90d9;
     color: white;
-    padding: 0.25rem 0.85rem;
+    padding: 0.25rem 0.85rem 0.25rem 0.75rem;
+    margin-top: 0.25rem;
     border-radius: 999px;
     font-size: 0.85rem;
     margin-right: 0.35rem;
