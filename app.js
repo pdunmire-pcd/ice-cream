@@ -40,7 +40,7 @@ app.post('/submit-order', (req, res) => {
         email: req.body.email,
         flavor: req.body.flavor,
         cone: req.body.method,
-        toppings: req.body['topping[]'] ? [].concat(req.body['topping[]']).join(', ') : 'None',
+        toppings: req.body['topping'] ? [].concat(req.body['topping']).join(', ') : 'None',
         comment: req.body.comment,
         timestamp: new Date()
     };

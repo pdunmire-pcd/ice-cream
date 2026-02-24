@@ -50,25 +50,31 @@ fieldset {
     font-size: 1rem;
     }
 
-    #neworder-button {
+#neworder-button {
     border: none;
     background-color: darkgreen;
     border-color: darkgreen;
     padding: 0.5rem 0.75rem;
     border-radius: .25rem;
     text-decoration: none;
-    color:white;
+    color: white;
     font-size: 1rem;
-    }
- #print-button {
+    flex: 1;
+    text-align: center;
+}
+
+#print-button {
     background-color: rgb(239, 239, 243);
     padding: 0.5rem 0.75rem;
     border-radius: .25rem;
-    border-color: rgb(43, 68, 158);
+    border: 1px solid rgb(43, 68, 158);
     text-decoration: none;
-    color:rgb(43, 68, 158);
+    color: rgb(43, 68, 158);
     font-size: 1rem;
-    }
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+}
 
 
 #order-details, #personal-information {
@@ -151,20 +157,22 @@ p {
 .topping-pill {
     background-color: #4a90d9;
     color: white;
-    padding: 0.2rem 0.6rem;
-    border-radius: 1rem;
+    padding: 0.25rem 0.85rem;
+    border-radius: 999px;
     font-size: 0.85rem;
-    margin-right: 0.25rem;
+    margin-right: 0.35rem;
     display: inline-block;
 }
 
 .comment-box {
     border: 1px solid rgb(224, 217, 217);
     border-radius: .25rem;
-    padding: 0.5rem;
+    padding: 0.75rem;
     color: darkblue;
-    min-height: 3rem;
+    min-height: 4rem;
     margin-bottom: 1.5rem;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    background-color: rgb(249, 249, 252);
 }
 
 .confirmation-buttons {
