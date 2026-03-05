@@ -6,14 +6,6 @@ import dotenv from 'dotenv';
 // Load environment variables from .env file
 dotenv.config();
 
-// IMport required modules
-import mysql2 from 'mysql2';
-import dotenv from 'dotenv';
-
-// Load environment variables from .env file
-dotenv.config();
-
-
 // Create an instance of an Express application
 const app = express();
 
@@ -21,8 +13,6 @@ const app = express();
 const PORT = 3005;
 
 app.use(express.static('public'));
-
-const orders = [];
 
 // View engine will now recognize ejs files and render them when requested
 app.set('view engine', 'ejs');
@@ -65,7 +55,7 @@ app.get('/admin', async (req, res) => {
 
         // Fetch all orders from database, newest first
         const [orders] = await pool.query('SELECT * FROM orders ORDER BY timestamp DESC');  
-        
+
         // Render the admin page
         res.render('admin', { orders });        
 
