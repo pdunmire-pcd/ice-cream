@@ -20,7 +20,7 @@ app.set('view engine', 'ejs');
 // Middleware to parse URL-encoded data from the request body
 app.use(express.urlencoded({ extended: true }));
 
-//Create a database connection pool with unique connection limit and credentials from environment variables
+// Create a database connection pool
 const pool = mysql2.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -31,15 +31,15 @@ const pool = mysql2.createPool({
 
 app.get('/db-test', async (req, res) => {
     try {
-        const orders = await pool.query("SELECT * FROM orders");
-        res.send(orders[0]);
-    }catch (err) {
+        const [orders] = await pool.query("SELECT * FROM orders");
+        res.send(orders);
+    } catch (err) {
         console.error("Database Error:", err);
         res.status(500).send("Database error: " + err.message);
     }
 });
 
-// Define a default "route" ('/')
+// Home route
 app.get('/', (req, res) => {
     res.render('home');
 });
@@ -51,42 +51,55 @@ app.get('/thank-you', (req, res) => {
 
 // Admin route
 app.get('/admin', async (req, res) => {
-       try {
+    try {
+        const [orders] = await pool.query(
+            'SELECT * FROM orders ORDER BY timestamp DESC'
+        );
 
-        // Fetch all orders from database, newest first
-        const [orders] = await pool.query('SELECT * FROM orders ORDER BY timestamp DESC');  
-
-        // Render the admin page
-        res.render('admin', { orders });        
-
+        res.render('admin', { orders });
     } catch (err) {
-
         console.error('Database error:', err);
-
-        res.status(500).send('Error loading orders: '
-
-+ err.message);
-
+        res.status(500).send('Error loading orders: ' + err.message);
     }
-    
 });
 
-app.post('/submit-order', (req, res) => {
+// Submit order route
+app.post('/submit-order', async (req, res) => {
+    try {
+        const order = {
+            customer: req.body.name,
+            email: req.body.email,
+            flavor: req.body.flavor,
+            cone: req.body.method,
+            toppings: req.body.topping
+                ? [].concat(req.body.topping).join(', ')
+                : 'None',
+            comment: req.body.comment
+        };
 
-    // Create an object to store the order data
-    const order = {
-        name: req.body.name,
-        email: req.body.email,
-        flavor: req.body.flavor,
-        cone: req.body.method,
-        toppings: req.body['topping'] ? [].concat(req.body['topping']).join(', ') : 'None',
-        comment: req.body.comment,
-        timestamp: new Date()
-    };
+        console.log('New order submitted:', order);
 
-    // Add order object to orders array
-    orders.push(order);
-    res.render('confirmation', { order });
+        const sql = `
+            INSERT INTO orders (customer, email, flavor, cone, toppings)
+            VALUES (?, ?, ?, ?, ?)
+        `;
+
+        const params = [
+            order.customer,
+            order.email,
+            order.flavor,
+            order.cone,
+            order.toppings
+        ];
+
+        const [result] = await pool.execute(sql, params);
+        console.log('Order saved with ID:', result.insertId);
+
+        res.render('confirmation', { order });
+    } catch (err) {
+        console.error('Error saving order:', err);
+        res.status(500).send('Sorry, there was an error processing your order.');
+    }
 });
 
 // Start the server and listen on the specified port
