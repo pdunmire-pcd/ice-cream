@@ -6,6 +6,14 @@ import dotenv from 'dotenv';
 // Load environment variables from .env file
 dotenv.config();
 
+// IMport required modules
+import mysql2 from 'mysql2';
+import dotenv from 'dotenv';
+
+// Load environment variables from .env file
+dotenv.config();
+
+
 // Create an instance of an Express application
 const app = express();
 
@@ -22,44 +30,24 @@ app.set('view engine', 'ejs');
 // Middleware to parse URL-encoded data from the request body
 app.use(express.urlencoded({ extended: true }));
 
-
-// Create a database connection pool with multiple connections
+//Create a database connection pool with unique connection limit and credentials from environment variables
 const pool = mysql2.createPool({
-
     host: process.env.DB_HOST,
-
     user: process.env.DB_USER,
-
     password: process.env.DB_PASSWORD,
-
     database: process.env.DB_NAME,
-
     port: process.env.DB_PORT
-
 }).promise();
 
-
-// Database test route (for debugging)
 app.get('/db-test', async (req, res) => {
-
     try {
-
-  const orders = await pool.query('SELECT * FROM orders');
-
-       res.send(orders[0]);
-
-    } catch (err) {
-
-       console.error('Database error:', err);
-
-       res.status(500).send('Database error: ' + err.message);
-
+        const orders = await pool.query("SELECT * FROM orders");
+        res.send(orders[0]);
+    }catch (err) {
+        console.error("Database Error:", err);
+        res.status(500).send("Database error: " + err.message);
     }
-
 });
-
-
-
 
 // Define a default "route" ('/')
 app.get('/', (req, res) => {
