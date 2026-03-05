@@ -1,5 +1,10 @@
 // Import the express module
 import express from 'express';
+import mysql2 from 'mysql2'; 
+import dotenv from 'dotenv';
+
+// Load environment variables from .env file
+dotenv.config();
 
 // IMport required modules
 import mysql2 from 'mysql2';
@@ -57,6 +62,7 @@ app.get('/thank-you', (req, res) => {
 // Admin route
 app.get('/admin', (req, res) => {
     res.render('admin', { orders });
+    
 });
 
 app.post('/submit-order', (req, res) => {
