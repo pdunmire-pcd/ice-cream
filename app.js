@@ -14,7 +14,7 @@ const PORT = 3005;
 
 app.use(express.static('public'));
 
-// const orders = [];
+const orders = [];
 
 // View engine will now recognize ejs files and render them when requested
 app.set('view engine', 'ejs');
